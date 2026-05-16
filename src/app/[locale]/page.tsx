@@ -1,8 +1,6 @@
 import Image from "next/image";
 import CopyAddress from "../copy-address";
 
-export const dynamic = "force-static";
-
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center">
