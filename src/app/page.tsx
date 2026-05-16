@@ -8,13 +8,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(177,200,222,0.06)_0%,transparent_70%)]" />
 
         <Image
-          src="/logo.png"
+          src="/logo.webp"
           alt="PVP.AC"
           width={80}
           height={80}
           className="relative w-[80px] h-[80px] shrink-0 drop-shadow-[0_0_24px_rgba(177,200,222,0.25)] mb-6 sm:mb-8"
           priority
-          loading="eager"
         />
 
         <h1 className="relative text-4xl sm:text-6xl font-black tracking-tight pvp-gradient-text mb-4">

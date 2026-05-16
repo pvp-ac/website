@@ -7,7 +7,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "PVP.AC",
   description: "PVP.AC - EAT, SLEEP, PVP, REPEAT",
-  icons: { icon: "/favicon.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
+    ],
+    apple: { url: "/favicon.png", sizes: "64x64" },
+  },
   openGraph: {
     title: "PVP.AC",
     description: "EAT, SLEEP, PVP, REPEAT",
@@ -15,11 +21,13 @@ export const metadata: Metadata = {
     siteName: "PVP.AC",
     locale: "ko_KR",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PVP.AC" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "PVP.AC",
     description: "EAT, SLEEP, PVP, REPEAT",
+    images: ["/og-image.png"],
   },
 };
 

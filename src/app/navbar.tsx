@@ -10,11 +10,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2 group">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="PVP.AC"
               width={26}
               height={26}
-              loading="eager"
+              priority
               className="w-[26px] h-[26px] shrink-0 drop-shadow-[0_0_6px_rgba(177,200,222,0.3)] group-hover:drop-shadow-[0_0_10px_rgba(177,200,222,0.5)] transition-[filter]"
             />
             <span className="text-[13px] font-extrabold pvp-gradient-text">

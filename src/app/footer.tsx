@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-3">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="PVP.AC"
                 width={22}
                 height={22}
