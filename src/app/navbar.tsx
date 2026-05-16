@@ -7,7 +7,7 @@ import LocaleSwitcher from "./locale-switcher";
 export default async function Navbar() {
   const t = await getTranslations("navbar");
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#09090b]/80 border-b border-zinc-800/60">
+    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#09090b]/80">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2.5 group">
@@ -37,7 +37,6 @@ export default async function Navbar() {
           </div>
         </div>
       </div>
-      <div className="h-px pvp-gradient-border opacity-30" />
     </nav>
   );
 }
