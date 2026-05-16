@@ -1,6 +1,7 @@
 {
   "navbar": {
-    "discord": "디스코드"
+    "discord": "디스코드",
+    "localeSwitcherLabel": "언어 선택"
   },
   "footer": {
     "links": "바로가기",

@@ -1,6 +1,7 @@
 {
   "navbar": {
-    "discord": "ディスコード"
+    "discord": "ディスコード",
+    "localeSwitcherLabel": "言語を選択"
   },
   "footer": {
     "links": "リンク",

@@ -27,12 +27,13 @@ export default async function Navbar() {
               href="https://discord.pvp.ac"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={t("discord")}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60"
             >
-              <Gamepad2 className="w-4 h-4" />
+              <Gamepad2 className="w-4 h-4" aria-hidden />
               <span className="hidden sm:inline">{t("discord")}</span>
             </a>
-            <LocaleSwitcher />
+            <LocaleSwitcher ariaLabel={t("localeSwitcherLabel")} />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 {
   "navbar": {
-    "discord": "Discord"
+    "discord": "Discord",
+    "localeSwitcherLabel": "Select language"
   },
   "footer": {
     "links": "Quick Links",

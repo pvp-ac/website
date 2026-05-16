@@ -25,7 +25,7 @@ export default async function Footer() {
 
           <div>
             <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
-              <Gamepad2 className="w-3.5 h-3.5" />
+              <Gamepad2 className="w-3.5 h-3.5" aria-hidden />
               {t("links")}
             </h3>
             <ul className="space-y-2">
@@ -39,7 +39,7 @@ export default async function Footer() {
 
           <div>
             <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
-              <Globe className="w-3.5 h-3.5" />
+              <Globe className="w-3.5 h-3.5" aria-hidden />
               {t("serverInfo")}
             </h3>
             <div className="space-y-2">

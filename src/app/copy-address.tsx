@@ -1,13 +1,17 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Copy, Check, X } from "lucide-react";
-import { useTranslations } from "next-intl";
 
-export default function CopyAddress() {
-  const t = useTranslations("copyAddress");
+export default function CopyAddress({ ariaLabel }: { ariaLabel: string }) {
   const [state, setState] = useState<"idle" | "copied" | "failed">("idle");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const handleCopy = async () => {
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -26,7 +30,7 @@ export default function CopyAddress() {
   return (
     <button
       onClick={handleCopy}
-      aria-label={t("ariaLabel")}
+      aria-label={ariaLabel}
       className="relative flex items-center gap-3 px-5 py-2.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors cursor-pointer"
     >
       <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

@@ -1,7 +1,15 @@
 import Image from "next/image";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import CopyAddress from "../copy-address";
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("copyAddress");
   return (
     <main className="flex flex-col items-center">
       <section className="relative w-full flex flex-col items-center justify-center px-4 pt-20 sm:pt-32 pb-16 sm:pb-24 overflow-hidden">
@@ -24,7 +32,7 @@ export default function HomePage() {
           EAT, SLEEP, PVP, REPEAT
         </p>
 
-        <CopyAddress />
+        <CopyAddress ariaLabel={t("ariaLabel")} />
       </section>
     </main>
   );

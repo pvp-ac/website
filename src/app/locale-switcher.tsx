@@ -1,19 +1,24 @@
 "use client";
 
+import { useEffect } from "react";
 import { Globe, ChevronDown } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useParams } from "next/navigation";
 import { routing, usePathname, useRouter } from "@/i18n/routing";
 
-const localeLabels: Record<string, string> = {
+const localeLabels: Record<(typeof routing.locales)[number], string> = {
   ko: "한국어",
   en: "English",
   ja: "日本語",
 };
 
-export default function LocaleSwitcher() {
-  const currentLocale = useLocale();
+export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
+  const { locale: currentLocale } = useParams<{ locale: string }>();
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    document.documentElement.lang = currentLocale;
+  }, [currentLocale]);
 
   return (
     <div className="ml-1 pl-2 border-l border-zinc-800 flex items-center gap-1">
@@ -22,8 +27,8 @@ export default function LocaleSwitcher() {
         <select
           value={currentLocale}
           onChange={(e) => router.replace(pathname, { locale: e.target.value })}
-          className="appearance-none bg-transparent pl-1 pr-5 py-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-100 cursor-pointer rounded-lg hover:bg-zinc-800/60 transition-colors focus:outline-none"
-          aria-label="언어 선택"
+          className="appearance-none bg-transparent pl-1 pr-5 py-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-100 cursor-pointer rounded-lg hover:bg-zinc-800/60 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-zinc-500"
+          aria-label={ariaLabel}
         >
           {routing.locales.map((loc) => (
             <option key={loc} value={loc} className="bg-zinc-900 text-zinc-100">
