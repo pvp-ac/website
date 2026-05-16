@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "discord": "디스코드"
+  },
+  "footer": {
+    "links": "바로가기",
+    "discord": "디스코드",
+    "serverInfo": "서버 정보"
+  },
+  "notFound": {
+    "message": "페이지를 찾을 수 없습니다."
+  },
+  "copyAddress": {
+    "ariaLabel": "서버 주소 pvp.ac 복사"
+  }
+}

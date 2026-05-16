@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CopyAddress from "./copy-address";
+import CopyAddress from "../copy-address";
 
 export default function HomePage() {
   return (

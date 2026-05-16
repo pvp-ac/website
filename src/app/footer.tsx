@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { Globe, Gamepad2, Heart } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer className="border-t border-zinc-800/60 mt-12">
       <div className="max-w-6xl mx-auto px-4 py-10">
@@ -24,17 +26,21 @@ export default function Footer() {
           <div>
             <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
               <Gamepad2 className="w-3.5 h-3.5" />
-              바로가기
+              {t("links")}
             </h3>
             <ul className="space-y-2">
-              <FooterLink href="https://discord.pvp.ac" label="디스코드" />
+              <li>
+                <a href="https://discord.pvp.ac" target="_blank" rel="noopener noreferrer" className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors">
+                  {t("discord")}
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
               <Globe className="w-3.5 h-3.5" />
-              서버 정보
+              {t("serverInfo")}
             </h3>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs text-zinc-400">
@@ -60,20 +66,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterLink({ href, label }: { href: string; label: string }) {
-  return (
-    <li>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
-      >
-        {label}
-      </a>
-    </li>
   );
 }

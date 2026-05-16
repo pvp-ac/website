@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pvp.ac"),
   title: "PVP.AC",
   description: "PVP.AC - EAT, SLEEP, PVP, REPEAT",
   icons: {
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "EAT, SLEEP, PVP, REPEAT",
     url: "https://pvp.ac",
     siteName: "PVP.AC",
-    locale: "ko_KR",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PVP.AC" }],
   },
@@ -31,13 +30,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const locale = await getLocale();
   return (
-    <html lang="ko" className="dark antialiased">
+    <html lang={locale} className="dark antialiased">
       <body className="min-h-dvh bg-[#09090b] text-zinc-100 flex flex-col">
-        <Navbar />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        {children}
       </body>
     </html>
   );

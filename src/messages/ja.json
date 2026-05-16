@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "discord": "ディスコード"
+  },
+  "footer": {
+    "links": "リンク",
+    "discord": "ディスコード",
+    "serverInfo": "サーバー情報"
+  },
+  "notFound": {
+    "message": "ページが見つかりません。"
+  },
+  "copyAddress": {
+    "ariaLabel": "サーバーアドレス pvp.ac をコピー"
+  }
+}

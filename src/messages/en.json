@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "discord": "Discord"
+  },
+  "footer": {
+    "links": "Quick Links",
+    "discord": "Discord",
+    "serverInfo": "Server Info"
+  },
+  "notFound": {
+    "message": "Page not found."
+  },
+  "copyAddress": {
+    "ariaLabel": "Copy server address pvp.ac"
+  }
+}
