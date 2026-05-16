@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     url: "https://pvp.ac",
     siteName: "PVP.AC",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PVP.AC" }],
+    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "PVP.AC" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "PVP.AC",
     description: "EAT, SLEEP, PVP, REPEAT",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 

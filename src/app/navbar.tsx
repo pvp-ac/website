@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Gamepad2 } from "lucide-react";
 import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import LocaleSwitcher from "./locale-switcher";
 
-export default function Navbar() {
-  const t = useTranslations("navbar");
+export default async function Navbar() {
+  const t = await getTranslations("navbar");
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#09090b]/80 border-b border-zinc-800/60">
       <div className="max-w-6xl mx-auto px-4">
