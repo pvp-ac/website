@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.pvp-gradient-text {
+  background: linear-gradient(90deg, #D9AFD9, #CCB7DB, #BFC0DC, #B1C8DE, #A4D1DF, #97D9E1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pvp-gradient-border {
+  background: linear-gradient(90deg, #D9AFD9, #97D9E1);
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 3px;
+  }
+}
