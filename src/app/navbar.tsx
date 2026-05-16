@@ -8,16 +8,16 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#09090b]/80 border-b border-zinc-800/60">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <Image
               src="/logo.webp"
               alt="PVP.AC"
-              width={26}
-              height={26}
+              width={28}
+              height={28}
               priority
-              className="w-[26px] h-[26px] shrink-0 drop-shadow-[0_0_6px_rgba(177,200,222,0.3)] group-hover:drop-shadow-[0_0_10px_rgba(177,200,222,0.5)] transition-[filter]"
+              className="w-[28px] h-[28px] shrink-0 drop-shadow-[0_0_6px_rgba(177,200,222,0.3)] group-hover:drop-shadow-[0_0_10px_rgba(177,200,222,0.5)] transition-[filter]"
             />
-            <span className="text-[13px] font-extrabold pvp-gradient-text">
+            <span className="text-sm font-extrabold pvp-gradient-text">
               PVP.AC
             </span>
           </Link>

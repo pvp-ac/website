@@ -20,7 +20,7 @@ export default function HomePage() {
           PVP.AC
         </h1>
 
-        <p className="relative text-sm sm:text-base text-zinc-500 tracking-[0.3em] uppercase font-medium mb-10 sm:mb-14">
+        <p className="relative text-sm sm:text-base text-zinc-400 tracking-[0.3em] uppercase font-medium mb-10 sm:mb-14">
           EAT, SLEEP, PVP, REPEAT
         </p>
 

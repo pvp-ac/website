@@ -11,10 +11,10 @@ export default function CopyAddress() {
     try {
       await navigator.clipboard.writeText("pvp.ac");
       setState("copied");
-      timerRef.current = setTimeout(() => setState("idle"), 1500);
+      timerRef.current = setTimeout(() => setState("idle"), 3000);
     } catch {
       setState("failed");
-      timerRef.current = setTimeout(() => setState("idle"), 1500);
+      timerRef.current = setTimeout(() => setState("idle"), 3000);
     }
   };
 
@@ -27,7 +27,7 @@ export default function CopyAddress() {
       <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
       <span className="text-sm font-mono text-zinc-300">pvp.ac</span>
       <svg
-        className={`w-3.5 h-3.5 shrink-0 ${state === "failed" ? "text-red-400" : state === "copied" ? "text-emerald-400" : "text-zinc-600"}`}
+        className={`w-3.5 h-3.5 shrink-0 ${state === "failed" ? "text-red-400" : state === "copied" ? "text-emerald-400" : "text-zinc-500"}`}
         width="14"
         height="14"
         viewBox="0 0 24 24"
