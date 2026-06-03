@@ -25,7 +25,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const ogLocale = hasLocale(routing.locales, locale) ? ogLocaleMap[locale] : "en_US";
-  return { openGraph: { locale: ogLocale } };
+  return {
+    alternates: {
+      languages: Object.fromEntries([
+        ...routing.locales.map((l) => [l, `/${l}`]),
+        ["x-default", `/${routing.defaultLocale}`],
+      ]),
+    },
+    openGraph: {
+      locale: ogLocale,
+      alternateLocale: routing.locales
+        .filter((l) => l !== locale)
+        .map((l) => ogLocaleMap[l]),
+    },
+  };
 }
 
 export default async function LocaleLayout({
@@ -41,10 +54,14 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <NextIntlClientProvider>
-      <Navbar />
-      <div className="flex-1">{children}</div>
-      <Footer />
-    </NextIntlClientProvider>
+    <html lang={locale} className="dark antialiased">
+      <body className="min-h-dvh bg-[#09090b] text-zinc-100 flex flex-col">
+        <NextIntlClientProvider>
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

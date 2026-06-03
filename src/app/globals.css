@@ -19,11 +19,11 @@ body {
   background-clip: text;
 }
 
-.pvp-gradient-border {
-  background: linear-gradient(90deg, #D9AFD9, #97D9E1);
-}
-
 @media (min-width: 640px) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f46 transparent;
+  }
   ::-webkit-scrollbar {
     width: 6px;
   }

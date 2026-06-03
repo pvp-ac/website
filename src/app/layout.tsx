@@ -30,11 +30,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
-  return (
-    <html className="dark antialiased">
-      <body className="min-h-dvh bg-[#09090b] text-zinc-100 flex flex-col">
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }

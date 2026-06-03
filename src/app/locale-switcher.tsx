@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { Globe, ChevronDown } from "lucide-react";
 import { useParams } from "next/navigation";
 import { routing, usePathname, useRouter } from "@/i18n/routing";
@@ -15,10 +14,6 @@ export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
   const { locale: currentLocale } = useParams<{ locale: string }>();
   const router = useRouter();
   const pathname = usePathname();
-
-  useEffect(() => {
-    document.documentElement.lang = currentLocale;
-  }, [currentLocale]);
 
   return (
     <div className="ml-1 pl-2 border-l border-zinc-800 flex items-center gap-1">
