@@ -6,5 +6,12 @@ export const routing = defineRouting({
   defaultLocale: "en",
 });
 
-export const { Link, usePathname, useRouter } =
-  createNavigation(routing);
+export type Locale = (typeof routing.locales)[number];
+
+export const localeMeta: Record<Locale, { label: string; og: string }> = {
+  ko: { label: "한국어", og: "ko_KR" },
+  en: { label: "English", og: "en_US" },
+  ja: { label: "日本語", og: "ja_JP" },
+};
+
+export const { Link, usePathname, useRouter } = createNavigation(routing);

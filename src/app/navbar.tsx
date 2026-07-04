@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Gamepad2 } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
+import { site } from "@/site";
 import LocaleSwitcher from "./locale-switcher";
 
 export default async function Navbar() {
@@ -13,18 +14,18 @@ export default async function Navbar() {
           <Link href="/" className="flex items-center gap-2.5 group">
             <Image
               src="/logo.webp"
-              alt="PVP.AC"
+              alt={site.name}
               width={28}
               height={28}
               priority
               className="w-[28px] h-[28px] shrink-0 drop-shadow-[0_0_6px_rgba(177,200,222,0.3)] group-hover:drop-shadow-[0_0_10px_rgba(177,200,222,0.5)] transition-[filter]"
             />
-            <span className="text-sm font-extrabold pvp-gradient-text">PVP.AC</span>
+            <span className="text-sm font-extrabold pvp-gradient-text">{site.name}</span>
           </Link>
 
           <div className="flex items-center gap-1">
             <a
-              href="https://discord.pvp.ac"
+              href={site.discord}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t("discord")}

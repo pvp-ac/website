@@ -1,34 +1,27 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { site } from "@/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pvp.ac"),
-  title: "PVP.AC",
-  description: "PVP.AC - EAT, SLEEP, PVP, REPEAT",
+  metadataBase: new URL(site.url),
+  title: site.name,
+  description: `${site.name} - ${site.tagline}`,
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon.png", type: "image/png", sizes: "64x64" },
     ],
-    apple: { url: "/favicon.png", sizes: "64x64" },
-  },
-  openGraph: {
-    title: "PVP.AC",
-    description: "EAT, SLEEP, PVP, REPEAT",
-    url: "https://pvp.ac",
-    siteName: "PVP.AC",
-    type: "website",
-    images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: "PVP.AC" }],
+    apple: { url: "/apple-icon.png", sizes: "180x180" },
   },
   twitter: {
     card: "summary_large_image",
-    title: "PVP.AC",
-    description: "EAT, SLEEP, PVP, REPEAT",
+    title: site.name,
+    description: site.tagline,
     images: ["/og-image.webp"],
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return children;
 }

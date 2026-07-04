@@ -1,17 +1,11 @@
 "use client";
 
 import { Globe, ChevronDown } from "lucide-react";
-import { useParams } from "next/navigation";
-import { routing, usePathname, useRouter } from "@/i18n/routing";
-
-const localeLabels: Record<(typeof routing.locales)[number], string> = {
-  ko: "한국어",
-  en: "English",
-  ja: "日本語",
-};
+import { useLocale } from "next-intl";
+import { routing, localeMeta, usePathname, useRouter } from "@/i18n/routing";
 
 export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
-  const { locale: currentLocale } = useParams<{ locale: string }>();
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -20,14 +14,14 @@ export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
       <Globe className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
       <div className="relative flex items-center">
         <select
-          value={currentLocale}
+          value={locale}
           onChange={(e) => router.replace(pathname, { locale: e.target.value })}
           className="appearance-none bg-transparent pl-1 pr-5 py-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-100 cursor-pointer rounded-lg hover:bg-zinc-800/60 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-zinc-500"
           aria-label={ariaLabel}
         >
           {routing.locales.map((loc) => (
             <option key={loc} value={loc} className="bg-zinc-900 text-zinc-100">
-              {localeLabels[loc]}
+              {localeMeta[loc].label}
             </option>
           ))}
         </select>

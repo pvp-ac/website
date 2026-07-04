@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Globe, Gamepad2, Heart } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { site } from "@/site";
 
 export default async function Footer() {
   const t = await getTranslations("footer");
@@ -12,15 +13,15 @@ export default async function Footer() {
             <div className="flex items-center gap-2.5 mb-3">
               <Image
                 src="/logo.webp"
-                alt="PVP.AC"
+                alt={site.name}
                 width={26}
                 height={26}
                 loading="lazy"
                 className="w-[26px] h-[26px] shrink-0"
               />
-              <span className="text-sm font-extrabold pvp-gradient-text">PVP.AC</span>
+              <span className="text-sm font-extrabold pvp-gradient-text">{site.name}</span>
             </div>
-            <p className="text-xs text-zinc-400 leading-relaxed">EAT, SLEEP, PVP, REPEAT</p>
+            <p className="text-xs text-zinc-400 leading-relaxed">{site.tagline}</p>
           </div>
 
           <div>
@@ -30,7 +31,7 @@ export default async function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://discord.pvp.ac" target="_blank" rel="noopener noreferrer" className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors">
+                <a href={site.discord} target="_blank" rel="noopener noreferrer" className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors">
                   {t("discord")}
                 </a>
               </li>
@@ -45,7 +46,7 @@ export default async function Footer() {
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs text-zinc-400">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                pvp.ac
+                {site.address}
               </div>
               <p className="text-xs text-zinc-400">Minecraft Java Edition 1.21+</p>
             </div>
@@ -54,7 +55,7 @@ export default async function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between mt-8 pt-6 border-t border-zinc-800/40 gap-3">
           <p className="text-xs text-zinc-500">
-            &copy; {new Date().getFullYear()} PVP.AC. All rights reserved.
+            &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p className="flex items-center gap-1 text-xs text-zinc-400">
             {"Made with "}
