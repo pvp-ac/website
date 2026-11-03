@@ -1,10 +1,11 @@
 "use client";
 
 import { Globe, ChevronDown } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { routing, localeMeta, usePathname, useRouter } from "@/i18n/routing";
 
-export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
+export default function LocaleSwitcher() {
+  const t = useTranslations("navbar");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -17,7 +18,7 @@ export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
           value={locale}
           onChange={(e) => router.replace(pathname, { locale: e.target.value })}
           className="appearance-none bg-transparent pl-1 pr-5 py-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-100 cursor-pointer rounded-lg hover:bg-zinc-800/60 transition-colors"
-          aria-label={ariaLabel}
+          aria-label={t("localeSwitcherLabel")}
         >
           {routing.locales.map((loc) => (
             <option key={loc} value={loc} className="bg-zinc-900 text-zinc-100">

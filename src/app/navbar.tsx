@@ -34,7 +34,7 @@ export default async function Navbar() {
               <Gamepad2 className="w-4 h-4" />
               <span className="hidden sm:inline">{t("discord")}</span>
             </a>
-            <LocaleSwitcher ariaLabel={t("localeSwitcherLabel")} />
+            <LocaleSwitcher />
           </div>
         </div>
       </div>
