@@ -68,7 +68,7 @@ export default async function Footer() {
                 <Heart
                   role="img"
                   aria-label={t("love")}
-                  className="inline w-3 h-3 align-[-1px] text-[#D9AFD9]"
+                  className="inline w-3 h-3 align-[-1px] text-brand-pink"
                 />
               ),
               link: (chunks) => (

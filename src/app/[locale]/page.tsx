@@ -28,14 +28,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <main className="flex flex-col items-center">
       <section className="relative w-full flex flex-col items-center justify-center px-4 pt-20 sm:pt-32 pb-16 sm:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(177,200,222,0.06)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-radial from-brand-blue/6 to-transparent to-70%" />
 
         <Image
           src="/logo.webp"
           alt={site.name}
           width={80}
           height={80}
-          className="relative w-[80px] h-[80px] shrink-0 drop-shadow-[0_0_24px_rgba(177,200,222,0.25)] mb-6 sm:mb-8"
+          className="relative w-[80px] h-[80px] shrink-0 drop-shadow-[0_0_24px] drop-shadow-brand-blue/25 mb-6 sm:mb-8"
           priority
         />
 

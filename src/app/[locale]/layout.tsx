@@ -49,7 +49,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="antialiased">
-      <body className="min-h-dvh bg-[#09090b] text-zinc-100 flex flex-col">
+      <body className="min-h-dvh bg-zinc-950 text-zinc-100 flex flex-col">
         <NextIntlClientProvider>
           <Navbar />
           <div className="flex-1">{children}</div>
