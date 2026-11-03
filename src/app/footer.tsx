@@ -14,10 +14,9 @@ export default async function Footer() {
               <Image
                 src="/logo.webp"
                 alt={site.name}
-                width={26}
-                height={26}
-                loading="lazy"
-                className="w-[26px] h-[26px] shrink-0"
+                width={28}
+                height={28}
+                className="w-[28px] h-[28px] shrink-0"
               />
               <span className="text-sm font-extrabold pvp-gradient-text">{site.name}</span>
             </div>
@@ -35,7 +34,7 @@ export default async function Footer() {
                   href={site.discord}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
+                  className="inline-block py-1.5 -my-1.5 text-xs text-zinc-400 hover:text-zinc-100 transition-colors"
                 >
                   {t("discord")}
                 </a>
@@ -58,7 +57,7 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between mt-8 pt-6 border-t border-zinc-800/40 gap-3">
+        <div className="flex flex-col sm:flex-row items-center justify-between mt-8 pt-6 border-t border-zinc-800/60 gap-3">
           <p className="text-xs text-zinc-400">
             &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
@@ -76,7 +75,7 @@ export default async function Footer() {
                   href="https://irochi.moe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline underline-offset-2 hover:text-zinc-200 transition-colors"
+                  className="underline underline-offset-2 hover:text-zinc-100 transition-colors"
                 >
                   {chunks}
                 </a>

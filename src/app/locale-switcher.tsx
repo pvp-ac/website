@@ -10,7 +10,7 @@ export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
   const pathname = usePathname();
 
   return (
-    <div className="ml-1 pl-2 border-l border-zinc-800 flex items-center gap-1">
+    <div className="ml-1 pl-2 border-l border-zinc-800/60 flex items-center gap-1">
       <Globe className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
       <div className="relative flex items-center">
         <select
