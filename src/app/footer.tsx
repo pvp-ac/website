@@ -62,25 +62,22 @@ export default async function Footer() {
             &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p className="text-xs text-zinc-400">
-            {t.rich("madeBy", {
-              heart: () => (
-                <Heart
-                  role="img"
-                  aria-label={t("love")}
-                  className="inline w-3 h-3 align-[-1px] text-brand-pink"
-                />
-              ),
-              link: (chunks) => (
-                <a
-                  href="https://irochi.moe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-2 hover:text-zinc-100 transition-colors"
-                >
-                  {chunks}
-                </a>
-              ),
-            })}
+            Made with{" "}
+            <Heart
+              role="img"
+              aria-label="love"
+              className="inline w-3 h-3 align-[-1px] text-brand-pink"
+            />{" "}
+            by Irochi (
+            <a
+              href="https://irochi.moe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-zinc-100 transition-colors"
+            >
+              https://irochi.moe
+            </a>
+            )
           </p>
         </div>
       </div>

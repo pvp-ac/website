@@ -6,9 +6,7 @@
   "footer": {
     "links": "Quick Links",
     "discord": "Discord",
-    "serverInfo": "Server Info",
-    "madeBy": "Made with <heart></heart> by Irochi (<link>https://irochi.moe</link>)",
-    "love": "love"
+    "serverInfo": "Server Info"
   },
   "notFound": {
     "message": "Page not found."
