@@ -6,12 +6,16 @@
   "footer": {
     "links": "リンク",
     "discord": "ディスコード",
-    "serverInfo": "サーバー情報"
+    "serverInfo": "サーバー情報",
+    "madeBy": "Irochi が <heart></heart> を込めて制作 (<link>https://irochi.moe</link>)",
+    "love": "愛"
   },
   "notFound": {
     "message": "ページが見つかりません。"
   },
   "copyAddress": {
-    "ariaLabel": "サーバーアドレス pvp.ac をコピー"
+    "ariaLabel": "サーバーアドレス pvp.ac をコピー",
+    "copied": "コピーしました",
+    "failed": "コピーに失敗しました"
   }
 }

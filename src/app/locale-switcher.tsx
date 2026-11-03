@@ -16,7 +16,7 @@ export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
         <select
           value={locale}
           onChange={(e) => router.replace(pathname, { locale: e.target.value })}
-          className="appearance-none bg-transparent pl-1 pr-5 py-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-100 cursor-pointer rounded-lg hover:bg-zinc-800/60 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-zinc-500"
+          className="appearance-none bg-transparent pl-1 pr-5 py-1.5 text-xs font-medium text-zinc-400 hover:text-zinc-100 cursor-pointer rounded-lg hover:bg-zinc-800/60 transition-colors"
           aria-label={ariaLabel}
         >
           {routing.locales.map((loc) => (
@@ -25,10 +25,7 @@ export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
             </option>
           ))}
         </select>
-        <ChevronDown
-          className="absolute right-0 w-3 h-3 text-zinc-500 pointer-events-none"
-          aria-hidden
-        />
+        <ChevronDown className="absolute right-0 w-3 h-3 text-zinc-500 pointer-events-none" />
       </div>
     </div>
   );

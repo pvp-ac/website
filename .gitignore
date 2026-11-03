@@ -26,4 +26,5 @@ next-env.d.ts
 # local tooling
 /.claude
 /.codegraph
+/.impeccable
 skills-lock.json

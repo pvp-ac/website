@@ -25,10 +25,10 @@ export default async function Footer() {
           </div>
 
           <div>
-            <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
-              <Gamepad2 className="w-3.5 h-3.5" aria-hidden />
+            <h2 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
+              <Gamepad2 className="w-3.5 h-3.5" />
               {t("links")}
-            </h3>
+            </h2>
             <ul className="space-y-2">
               <li>
                 <a
@@ -44,37 +44,44 @@ export default async function Footer() {
           </div>
 
           <div>
-            <h3 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
-              <Globe className="w-3.5 h-3.5" aria-hidden />
+            <h2 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-3">
+              <Globe className="w-3.5 h-3.5" />
               {t("serverInfo")}
-            </h3>
+            </h2>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs text-zinc-400">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-emerald-500 motion-safe:animate-pulse" />
                 {site.address}
               </div>
-              <p className="text-xs text-zinc-400">Minecraft Java Edition 1.21+</p>
+              <p className="text-xs text-zinc-400">Minecraft: Java Edition 1.21+</p>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between mt-8 pt-6 border-t border-zinc-800/40 gap-3">
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-zinc-400">
             &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="flex items-center gap-1 text-xs text-zinc-400">
-            {"Made with "}
-            <Heart className="w-3 h-3 text-[#D9AFD9]" />
-            {" by Irochi ("}
-            <a
-              href="https://irochi.moe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-zinc-200 transition-colors"
-            >
-              https://irochi.moe
-            </a>
-            {")"}
+          <p className="text-xs text-zinc-400">
+            {t.rich("madeBy", {
+              heart: () => (
+                <Heart
+                  role="img"
+                  aria-label={t("love")}
+                  className="inline w-3 h-3 align-[-1px] text-[#D9AFD9]"
+                />
+              ),
+              link: (chunks) => (
+                <a
+                  href="https://irochi.moe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-zinc-200 transition-colors"
+                >
+                  {chunks}
+                </a>
+              ),
+            })}
           </p>
         </div>
       </div>

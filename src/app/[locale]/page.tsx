@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { setRequestLocale, getTranslations } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/site";
 import CopyAddress from "../copy-address";
@@ -25,7 +25,6 @@ export async function generateMetadata({
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("copyAddress");
   return (
     <main className="flex flex-col items-center">
       <section className="relative w-full flex flex-col items-center justify-center px-4 pt-20 sm:pt-32 pb-16 sm:pb-24 overflow-hidden">
@@ -48,7 +47,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {site.tagline}
         </p>
 
-        <CopyAddress ariaLabel={t("ariaLabel")} />
+        <CopyAddress />
       </section>
     </main>
   );

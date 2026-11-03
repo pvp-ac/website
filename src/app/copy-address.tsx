@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Copy, Check, X } from "lucide-react";
 import { site } from "@/site";
 
@@ -10,7 +11,8 @@ const states = {
   failed: { Icon: X, color: "text-red-400" },
 } as const;
 
-export default function CopyAddress({ ariaLabel }: { ariaLabel: string }) {
+export default function CopyAddress() {
+  const t = useTranslations("copyAddress");
   const [state, setState] = useState<keyof typeof states>("idle");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -34,15 +36,20 @@ export default function CopyAddress({ ariaLabel }: { ariaLabel: string }) {
   const { Icon, color } = states[state];
 
   return (
-    <button
-      type="button"
-      onClick={handleCopy}
-      aria-label={ariaLabel}
-      className="relative flex items-center gap-3 px-5 py-2.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors cursor-pointer"
-    >
-      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-      <span className="text-sm font-mono text-zinc-300">{site.address}</span>
-      <Icon className={`w-3.5 h-3.5 shrink-0 ${color}`} aria-hidden />
-    </button>
+    <>
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={t("ariaLabel")}
+        className="relative flex items-center gap-3 px-5 py-2.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors cursor-pointer"
+      >
+        <div className="w-2 h-2 rounded-full bg-emerald-500 motion-safe:animate-pulse" />
+        <span className="text-sm font-mono text-zinc-300">{site.address}</span>
+        <Icon className={`w-3.5 h-3.5 shrink-0 ${color}`} />
+      </button>
+      <span role="status" className="sr-only">
+        {state !== "idle" && t(state)}
+      </span>
+    </>
   );
 }

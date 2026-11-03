@@ -6,12 +6,16 @@
   "footer": {
     "links": "Quick Links",
     "discord": "Discord",
-    "serverInfo": "Server Info"
+    "serverInfo": "Server Info",
+    "madeBy": "Made with <heart></heart> by Irochi (<link>https://irochi.moe</link>)",
+    "love": "love"
   },
   "notFound": {
     "message": "Page not found."
   },
   "copyAddress": {
-    "ariaLabel": "Copy server address pvp.ac"
+    "ariaLabel": "Copy server address pvp.ac",
+    "copied": "Copied",
+    "failed": "Copy failed"
   }
 }
