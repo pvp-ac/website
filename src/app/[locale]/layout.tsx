@@ -30,9 +30,7 @@ export async function generateMetadata({
       type: "website",
       images: [{ url: "/og-image.webp", width: 1200, height: 630, alt: site.name }],
       locale: ogLocale,
-      alternateLocale: routing.locales
-        .filter((l) => l !== locale)
-        .map((l) => localeMeta[l].og),
+      alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => localeMeta[l].og),
     },
   };
 }

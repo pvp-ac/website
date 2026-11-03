@@ -25,7 +25,10 @@ export default function LocaleSwitcher({ ariaLabel }: { ariaLabel: string }) {
             </option>
           ))}
         </select>
-        <ChevronDown className="absolute right-0 w-3 h-3 text-zinc-500 pointer-events-none" aria-hidden />
+        <ChevronDown
+          className="absolute right-0 w-3 h-3 text-zinc-500 pointer-events-none"
+          aria-hidden
+        />
       </div>
     </div>
   );

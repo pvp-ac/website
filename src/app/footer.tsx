@@ -31,7 +31,12 @@ export default async function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href={site.discord} target="_blank" rel="noopener noreferrer" className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors">
+                <a
+                  href={site.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
+                >
                   {t("discord")}
                 </a>
               </li>
@@ -61,7 +66,14 @@ export default async function Footer() {
             {"Made with "}
             <Heart className="w-3 h-3 text-[#D9AFD9]" />
             {" by Irochi ("}
-            <a href="https://irochi.moe" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-zinc-200 transition-colors">https://irochi.moe</a>
+            <a
+              href="https://irochi.moe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-zinc-200 transition-colors"
+            >
+              https://irochi.moe
+            </a>
             {")"}
           </p>
         </div>
