@@ -12,7 +12,7 @@
     "message": "ページが見つかりません。"
   },
   "copyAddress": {
-    "ariaLabel": "サーバーアドレス pvp.ac をコピー",
+    "ariaLabel": "サーバーアドレス {address} をコピー",
     "copied": "コピーしました",
     "failed": "コピーに失敗しました"
   }

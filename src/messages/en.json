@@ -12,7 +12,7 @@
     "message": "Page not found."
   },
   "copyAddress": {
-    "ariaLabel": "Copy server address pvp.ac",
+    "ariaLabel": "Copy server address {address}",
     "copied": "Copied",
     "failed": "Copy failed"
   }
